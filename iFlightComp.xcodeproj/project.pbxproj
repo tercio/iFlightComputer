@@ -40,7 +40,7 @@
 		4A96E39E14D6C642000B1B3E /* IFCConversionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFCConversionViewController.m; sourceTree = "<group>"; };
 		4A96E3A014D6C642000B1B3E /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		4A96E3A214D6C642000B1B3E /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		4A96E3A414D6C642000B1B3E /* IFCWindViewController.h */ = {isa = PBXFileReference; path = IFCWindViewController.h; sourceTree = "<group>"; };
+		4A96E3A414D6C642000B1B3E /* IFCWindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFCWindViewController.h; sourceTree = "<group>"; };
 		4A96E3A514D6C642000B1B3E /* IFCWindViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFCWindViewController.m; sourceTree = "<group>"; };
 		4A96E3A714D6C642000B1B3E /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		4A96E3A914D6C642000B1B3E /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
@@ -109,9 +109,9 @@
 				4A96E3A514D6C642000B1B3E /* IFCWindViewController.m */,
 				4A96E3A714D6C642000B1B3E /* second.png */,
 				4A96E3A914D6C642000B1B3E /* second@2x.png */,
+				4A96E39214D6C642000B1B3E /* Supporting Files */,
 				4A96E3AB14D6C642000B1B3E /* IFCConversionViewController.xib */,
 				4A96E3AE14D6C642000B1B3E /* IFCWindViewController.xib */,
-				4A96E39214D6C642000B1B3E /* Supporting Files */,
 			);
 			path = iFlightComp;
 			sourceTree = "<group>";
@@ -329,6 +329,7 @@
 				4A96E3B514D6C642000B1B3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

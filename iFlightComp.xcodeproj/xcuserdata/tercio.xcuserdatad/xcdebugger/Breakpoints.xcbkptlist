@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "iFlightComp/IFCConversionViewController.m"
-         timestampString = "349632866.744041"
+         timestampString = "349830119.806683"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
+         startingLineNumber = "111"
+         endingLineNumber = "111"
          landmarkName = "-speedValueChanged:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "iFlightComp/IFCConversionViewController.m"
-         timestampString = "349633105.846463"
+         timestampString = "349830119.806683"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "124"
-         endingLineNumber = "124"
+         startingLineNumber = "144"
+         endingLineNumber = "144"
          landmarkName = "-calculateFlightTime:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -42,7 +42,21 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "133"
          endingLineNumber = "133"
-         landmarkName = "-calculateWind:"
+         landmarkName = "-setViewMovedUp:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "iFlightComp/IFCConversionViewController.m"
+         timestampString = "349831075.19029"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "186"
+         endingLineNumber = "186"
+         landmarkName = "-calculateLitersGallons:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

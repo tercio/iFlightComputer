@@ -8,6 +8,9 @@
 
 #import "IFCConversionViewController.h"
 
+#define CF_WSIZE 45 // must change this
+#define LG_WSIZE 95 // must change this
+
 @implementation IFCConversionViewController
 @synthesize mph;
 @synthesize kmh;
@@ -15,6 +18,13 @@
 @synthesize distance;
 @synthesize speed;
 @synthesize flightTime;
+@synthesize feet;
+@synthesize meters;
+@synthesize celsius;
+@synthesize fahrenheit;
+@synthesize liters;
+@synthesize gallons;
+@synthesize windowMovedUpBy;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,6 +32,7 @@
     if (self) {
         self.title = NSLocalizedString(@"First", @"First");
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        [self setWindowMovedUpBy:0];
     }
     return self;
 }
@@ -48,6 +59,12 @@
     [self setDistance:nil];
     [self setSpeed:nil];
     [self setFlightTime:nil];
+    [self setFeet:nil];
+    [self setMeters:nil];
+    [self setCelsius:nil];
+    [self setFahrenheit:nil];
+    [self setLiters:nil];
+    [self setGallons:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -81,6 +98,9 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [[self view] endEditing:YES];
+    if ([self windowMovedUpBy] != 0)
+        [self setViewMovedUp:NO byHeight:[self windowMovedUpBy]];
+        
 }
     
 
@@ -128,12 +148,129 @@
     
 }
 
+- (IBAction)calculateFeetMeters:(id)sender {
+    
+    if ([[feet text] length] != 0) {
+        NSString *sMeters = [NSString stringWithFormat:@"%.0f",[FlightComputer metersFromFeet:[[feet text] doubleValue]]];
+        [meters setText:sMeters];
+        [feet resignFirstResponder];
+                             
+    }
+    if ([[meters text] length] != 0) {
+        NSString *sFeet = [NSString stringWithFormat:@"%.0f",[FlightComputer feetFromMeters:[[meters text] doubleValue]]];
+        [feet setText:sFeet];
+        [meters resignFirstResponder];
+    }
+}
+
+- (IBAction)calculateCelsiusFahrenheit:(id)sender {
+    
+    if ([[celsius text] length] != 0) {
+        NSString *sFa = [NSString stringWithFormat:@"%.1f",[FlightComputer fahrenheitFromCelsius:[[celsius text] doubleValue]]];
+        [fahrenheit setText:sFa];
+        [celsius resignFirstResponder];
+        [self setViewMovedUp:NO byHeight:CF_WSIZE];
+    } else if ([[fahrenheit text] length] != 0) {
+        NSString *sC = [NSString stringWithFormat:@"%.1f",[FlightComputer celsiusFromFahrenheit:[[fahrenheit text] doubleValue]]];
+        [celsius setText:sC];
+        [fahrenheit resignFirstResponder];
+        [self setViewMovedUp:NO byHeight:CF_WSIZE];
+    }
+    
+    
+    
+}
+
+- (IBAction)calculateLitersGallons:(id)sender {
+    
+    if ([[liters text] length] != 0) {
+        NSString *sG = [NSString stringWithFormat:@"%.1f",[FlightComputer gallonFromLiter:[[liters text] floatValue]]];
+        [gallons setText:sG];
+        [liters resignFirstResponder];
+        [self setViewMovedUp:NO byHeight:LG_WSIZE];
+    } else if ([[gallons text] length] != 0) {
+        NSString *sL = [NSString stringWithFormat:@"%.1f",[FlightComputer literFromGallon:[[gallons text] floatValue]]];
+        [liters setText:sL];
+        [gallons resignFirstResponder];
+        [self setViewMovedUp:NO byHeight:LG_WSIZE];
+    }
+}
+
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    [kmh setText:@""];
-    [mph setText:@""];
-    [knot setText:@""];
+    if ([textField isEqual:kmh]) {
+        [mph setText:@""];
+        [knot setText:@""];
+    }
+    if ([textField isEqual:mph]) {
+        [kmh setText:@""];
+        [knot setText:@""];
+    }
+    if ([textField isEqual:knot]) {
+        [kmh setText:@""];
+        [mph setText:@""];
+    }
+    if ([textField isEqual:feet]) {
+        [meters setText:@""];
+    }
+    
+    if ([textField isEqual:meters]) {
+        [feet setText:@""];
+    }
+    
+    // celsius and fahrenheit
+    if ([textField isEqual:celsius]) {
+        [fahrenheit setText:@""];
+        [self setViewMovedUp:YES byHeight:CF_WSIZE];
+    }
+    if ([textField isEqual:fahrenheit]) {
+        [celsius setText:@""];
+        [self setViewMovedUp:YES byHeight:CF_WSIZE];
+    }
+    
+    // liters and gallons
+    if ([textField isEqual:liters]) {
+        [gallons setText:@""];
+        [self setViewMovedUp:YES byHeight:LG_WSIZE];
+    }
+    if ([textField isEqual:gallons]) {
+        [liters setText:@""];
+        [self setViewMovedUp:YES byHeight:LG_WSIZE];
+    }
+    
     
     return YES;
 }
+
+-(void)setViewMovedUp:(BOOL)movedUp byHeight:(int) h
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5]; // if you want to slide up the view
+    
+    CGRect rect = self.view.frame;
+    if (movedUp)
+    {
+        // 1. move the view's origin up so that the text field that will be hidden come above the keyboard 
+        // 2. increase the size of the view so that the area behind the keyboard is covered up.
+        rect.origin.y -= h;
+        rect.size.height += h;
+    }
+    else
+    {
+        if (rect.origin.y != 0) {
+            // revert back to the normal state.
+            rect.origin.y += h;
+            rect.size.height -= h;
+        }
+    }
+    self.view.frame = rect;
+    
+    [UIView commitAnimations];
+    
+    if (movedUp == TRUE)
+        [self setWindowMovedUpBy:h];
+    else
+        [self setWindowMovedUpBy:0];
+}
+
 
 @end

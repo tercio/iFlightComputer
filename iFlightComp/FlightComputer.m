@@ -48,12 +48,12 @@
 
 + (float) metersFromFeet: (float) feet {
     if (feet <= 0.0) return 0.0;
-    return feet / 3.3;
+    return feet * 0.3048;
 }   
 
 + (float) feetFromMeters: (float) meters {
     if (meters <= 0.0) return 0.0;
-    return meters * 3.3;
+    return meters * 3.281;
 }
 
 // km with speed as km/h will return in hours
