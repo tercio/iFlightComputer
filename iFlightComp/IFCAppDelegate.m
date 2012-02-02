@@ -9,8 +9,9 @@
 #import "IFCAppDelegate.h"
 
 #import "IFCConversionViewController.h"
-
 #import "IFCWindViewController.h"
+#import "IFCNavigationViewController.h"
+
 
 @implementation IFCAppDelegate
 
@@ -23,8 +24,11 @@
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[IFCConversionViewController alloc] initWithNibName:@"IFCConversionViewController" bundle:nil];
     UIViewController *viewController2 = [[IFCWindViewController alloc] initWithNibName:@"IFCWindViewController" bundle:nil];
+    UIViewController *viewController3 = [[IFCNavigationViewController alloc] initWithNibName:@"IFCNavigationViewController" bundle:nil];
+    
+    
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, viewController3, nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

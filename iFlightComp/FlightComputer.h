@@ -10,6 +10,8 @@
 
 @interface FlightComputer : NSObject
 
+
+// ++++++ conversion routines
 + (float) mphFromKmh:(float) aKmh;
 + (float) kmhFromMph:(float) aMph;
 + (float) knotFromMph: (float) aMph;
@@ -26,18 +28,19 @@
 + (int) getHours:(float) n;
 + (int) getMinutes:(float) n;
 
-+ (float) fuelConsumedOnHours:(float )h forAutonomy:(float) litersPerHour;
+
 
 + (float) celsiusFromFahrenheit:(float) f;
 + (float) fahrenheitFromCelsius:(float) c;
 
+// ++++++ navigation routines
 // time in hours and speed in km/h
 + (float) distanceForTime:(float) t andSpeed:(float) s;
-
++ (float) fuelConsumedOnHours:(float )h forAutonomy:(float) litersPerHour;
 + (float) timeToTravel:(float) km atSpeed:(float) s;
-
 + (float) altitudeDensityForAltitude:(float) a withTrueTemperature:(float) t;
 
+// +++++++ wind routines
 + (NSArray *) windCorrectionForHeading:(double)heading airspeed:(double) aspeed windDir: (double) wd windSpeed: (double) ws;
 
 

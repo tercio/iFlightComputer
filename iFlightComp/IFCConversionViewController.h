@@ -26,9 +26,15 @@
 @property (weak, nonatomic) IBOutlet UITextField *liters;
 @property (weak, nonatomic) IBOutlet UITextField *gallons; 
 @property (assign, nonatomic) int windowMovedUpBy;
+@property (weak, nonatomic) IBOutlet UITextField *altitude;
+@property (weak, nonatomic) IBOutlet UITextField *oat;
+@property (weak, nonatomic) IBOutlet UILabel *densityAltitude;
+
+
 
 - (void)setViewMovedUp:(BOOL)movedUp  byHeight:(int) h;
 
+- (IBAction)calculateDensityAltitude:(id)sender;
 
 - (IBAction)speedValueChanged:(id)sender;
 

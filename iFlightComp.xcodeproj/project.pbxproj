@@ -23,6 +23,12 @@
 		4A96E3B014D6C642000B1B3E /* IFCWindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A96E3AE14D6C642000B1B3E /* IFCWindViewController.xib */; };
 		4A96E3B814D6C8DF000B1B3E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A96E3BA14D6C8DF000B1B3E /* Localizable.strings */; };
 		4A96E3C214D6E403000B1B3E /* FlightComputer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A96E3C014D6E403000B1B3E /* FlightComputer.m */; };
+		4AA6DF1814DAC66300C22476 /* IFCNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA6DF1614DAC66300C22476 /* IFCNavigationViewController.m */; };
+		4AA6DF1914DAC66300C22476 /* IFCNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AA6DF1714DAC66300C22476 /* IFCNavigationViewController.xib */; };
+		4AA6DF1C14DB120400C22476 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA6DF1B14DB120400C22476 /* Default@2x.png */; };
+		4AA6DF1E14DB121600C22476 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA6DF1D14DB121600C22476 /* Default.png */; };
+		4AA6DF2014DB132900C22476 /* iflightcomp.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA6DF1F14DB132900C22476 /* iflightcomp.png */; };
+		4AA6DF2214DB132D00C22476 /* iflightcomp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA6DF2114DB132D00C22476 /* iflightcomp@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,13 @@
 		4A96E3BB14D6C900000B1B3E /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4A96E3C014D6E403000B1B3E /* FlightComputer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightComputer.m; sourceTree = "<group>"; };
 		4A96E3C114D6E403000B1B3E /* FlightComputer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightComputer.h; sourceTree = "<group>"; };
+		4AA6DF1514DAC66300C22476 /* IFCNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFCNavigationViewController.h; sourceTree = "<group>"; };
+		4AA6DF1614DAC66300C22476 /* IFCNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFCNavigationViewController.m; sourceTree = "<group>"; };
+		4AA6DF1714DAC66300C22476 /* IFCNavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IFCNavigationViewController.xib; sourceTree = "<group>"; };
+		4AA6DF1B14DB120400C22476 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		4AA6DF1D14DB121600C22476 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4AA6DF1F14DB132900C22476 /* iflightcomp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iflightcomp.png; sourceTree = "<group>"; };
+		4AA6DF2114DB132D00C22476 /* iflightcomp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iflightcomp@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +82,10 @@
 		4A96E37C14D6C641000B1B3E = {
 			isa = PBXGroup;
 			children = (
+				4AA6DF2114DB132D00C22476 /* iflightcomp@2x.png */,
+				4AA6DF1F14DB132900C22476 /* iflightcomp.png */,
+				4AA6DF1D14DB121600C22476 /* Default.png */,
+				4AA6DF1B14DB120400C22476 /* Default@2x.png */,
 				4A96E39114D6C642000B1B3E /* iFlightComp */,
 				4A96E38A14D6C641000B1B3E /* Frameworks */,
 				4A96E38814D6C641000B1B3E /* Products */,
@@ -98,8 +115,8 @@
 			children = (
 				4A96E3C014D6E403000B1B3E /* FlightComputer.m */,
 				4A96E3C114D6E403000B1B3E /* FlightComputer.h */,
-				4A96E39A14D6C642000B1B3E /* IFCAppDelegate.h */,
 				4A96E3BA14D6C8DF000B1B3E /* Localizable.strings */,
+				4A96E39A14D6C642000B1B3E /* IFCAppDelegate.h */,
 				4A96E39B14D6C642000B1B3E /* IFCAppDelegate.m */,
 				4A96E39D14D6C642000B1B3E /* IFCConversionViewController.h */,
 				4A96E39E14D6C642000B1B3E /* IFCConversionViewController.m */,
@@ -107,11 +124,14 @@
 				4A96E3A214D6C642000B1B3E /* first@2x.png */,
 				4A96E3A414D6C642000B1B3E /* IFCWindViewController.h */,
 				4A96E3A514D6C642000B1B3E /* IFCWindViewController.m */,
+				4AA6DF1514DAC66300C22476 /* IFCNavigationViewController.h */,
+				4AA6DF1614DAC66300C22476 /* IFCNavigationViewController.m */,
 				4A96E3A714D6C642000B1B3E /* second.png */,
 				4A96E3A914D6C642000B1B3E /* second@2x.png */,
 				4A96E39214D6C642000B1B3E /* Supporting Files */,
 				4A96E3AB14D6C642000B1B3E /* IFCConversionViewController.xib */,
 				4A96E3AE14D6C642000B1B3E /* IFCWindViewController.xib */,
+				4AA6DF1714DAC66300C22476 /* IFCNavigationViewController.xib */,
 			);
 			path = iFlightComp;
 			sourceTree = "<group>";
@@ -186,6 +206,11 @@
 				4A96E3AD14D6C642000B1B3E /* IFCConversionViewController.xib in Resources */,
 				4A96E3B014D6C642000B1B3E /* IFCWindViewController.xib in Resources */,
 				4A96E3B814D6C8DF000B1B3E /* Localizable.strings in Resources */,
+				4AA6DF1914DAC66300C22476 /* IFCNavigationViewController.xib in Resources */,
+				4AA6DF1C14DB120400C22476 /* Default@2x.png in Resources */,
+				4AA6DF1E14DB121600C22476 /* Default.png in Resources */,
+				4AA6DF2014DB132900C22476 /* iflightcomp.png in Resources */,
+				4AA6DF2214DB132D00C22476 /* iflightcomp@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +226,7 @@
 				4A96E39F14D6C642000B1B3E /* IFCConversionViewController.m in Sources */,
 				4A96E3A614D6C642000B1B3E /* IFCWindViewController.m in Sources */,
 				4A96E3C214D6E403000B1B3E /* FlightComputer.m in Sources */,
+				4AA6DF1814DAC66300C22476 /* IFCNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

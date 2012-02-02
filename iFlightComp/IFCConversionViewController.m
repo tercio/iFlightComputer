@@ -25,6 +25,9 @@
 @synthesize liters;
 @synthesize gallons;
 @synthesize windowMovedUpBy;
+@synthesize altitude;
+@synthesize oat;
+@synthesize densityAltitude;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,6 +52,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [oat setKeyboardType:UIKeyboardTypeDecimalPad];
+    [feet setKeyboardType:UIKeyboardTypeDecimalPad];
+    [meters setKeyboardType:UIKeyboardTypeDecimalPad];
+    [celsius setKeyboardType:UIKeyboardTypeDecimalPad];
+    [fahrenheit setKeyboardType:UIKeyboardTypeDecimalPad];
+    [gallons setKeyboardType:UIKeyboardTypeDecimalPad];
+    [liters setKeyboardType:UIKeyboardTypeDecimalPad];
 }
 
 - (void)viewDidUnload
@@ -65,6 +75,9 @@
     [self setFahrenheit:nil];
     [self setLiters:nil];
     [self setGallons:nil];
+    [self setAltitude:nil];
+    [self setOat:nil];
+    [self setDensityAltitude:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -163,6 +176,8 @@
     }
 }
 
+
+
 - (IBAction)calculateCelsiusFahrenheit:(id)sender {
     
     if ([[celsius text] length] != 0) {
@@ -243,6 +258,12 @@
 
 -(void)setViewMovedUp:(BOOL)movedUp byHeight:(int) h
 {
+    
+    // we prevent the window to move up when it was already moved and user is only moving from a 
+    // uitextfield that is aside the one - in this case window must not be moved up, otherwise it will
+    // keep being moved indefinetely
+    if ([self windowMovedUpBy] != 0 && movedUp) return;
+    
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.5]; // if you want to slide up the view
     
@@ -270,6 +291,14 @@
         [self setWindowMovedUpBy:h];
     else
         [self setWindowMovedUpBy:0];
+}
+
+- (IBAction)calculateDensityAltitude:(id)sender {
+    
+    NSString *sDA = [NSString stringWithFormat:@"%.0f",[FlightComputer altitudeDensityForAltitude:[[altitude text]floatValue] withTrueTemperature:[[oat text] floatValue]]];
+    [densityAltitude setText:sDA];
+    [oat resignFirstResponder];
+    [altitude resignFirstResponder];
 }
 
 
