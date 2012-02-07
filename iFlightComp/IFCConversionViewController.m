@@ -10,6 +10,8 @@
 
 #define CF_WSIZE 45 // must change this
 #define LG_WSIZE 95 // must change this
+#define TAS_WSIZE 165 // must change this
+
 
 @implementation IFCConversionViewController
 @synthesize mph;
@@ -28,6 +30,9 @@
 @synthesize altitude;
 @synthesize oat;
 @synthesize densityAltitude;
+@synthesize ias;
+@synthesize iasAltitude;
+@synthesize tas;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,11 +57,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [oat setKeyboardType:UIKeyboardTypeDecimalPad];
+    //[oat setKeyboardType:UIKeyboardTypeDecimalPad];
     [feet setKeyboardType:UIKeyboardTypeDecimalPad];
     [meters setKeyboardType:UIKeyboardTypeDecimalPad];
-    [celsius setKeyboardType:UIKeyboardTypeDecimalPad];
-    [fahrenheit setKeyboardType:UIKeyboardTypeDecimalPad];
+    //[celsius setKeyboardType:UIKeyboardTypeDecimalPad];
+    //[fahrenheit setKeyboardType:UIKeyboardTypeDecimalPad];
     [gallons setKeyboardType:UIKeyboardTypeDecimalPad];
     [liters setKeyboardType:UIKeyboardTypeDecimalPad];
 }
@@ -78,6 +83,9 @@
     [self setAltitude:nil];
     [self setOat:nil];
     [self setDensityAltitude:nil];
+    [self setIas:nil];
+    [self setIasAltitude:nil];
+    [self setTas:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -211,6 +219,21 @@
     }
 }
 
+- (IBAction)calculateTAS:(id)sender {
+    
+    
+    float ftas = [FlightComputer iasToTAS:[[ias text] floatValue] altitude:[[iasAltitude text] floatValue]];
+    
+    NSString *sTAS = [NSString stringWithFormat:@"%.0f",ftas];
+    
+    [[self view] endEditing:YES];
+    
+    
+    [tas setText:sTAS];
+    [self setViewMovedUp:NO byHeight:TAS_WSIZE];
+    
+}
+
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if ([textField isEqual:kmh]) {
         [mph setText:@""];
@@ -251,6 +274,12 @@
         [liters setText:@""];
         [self setViewMovedUp:YES byHeight:LG_WSIZE];
     }
+    
+    if ([textField isEqual:ias])
+        [self setViewMovedUp:YES byHeight:TAS_WSIZE];
+    
+    if ([textField isEqual:iasAltitude])
+        [self setViewMovedUp:YES byHeight:TAS_WSIZE];
     
     
     return YES;

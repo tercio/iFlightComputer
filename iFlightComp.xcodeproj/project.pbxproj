@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A55A0BE14E1AEF400DB8005 /* IFCAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55A0BC14E1AEF400DB8005 /* IFCAboutViewController.m */; };
+		4A55A0BF14E1AEF400DB8005 /* IFCAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A55A0BD14E1AEF400DB8005 /* IFCAboutViewController.xib */; };
 		4A96E38C14D6C641000B1B3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A96E38B14D6C641000B1B3E /* UIKit.framework */; };
 		4A96E38E14D6C641000B1B3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A96E38D14D6C641000B1B3E /* Foundation.framework */; };
 		4A96E39014D6C641000B1B3E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A96E38F14D6C641000B1B3E /* CoreGraphics.framework */; };
@@ -32,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A55A0BB14E1AEF400DB8005 /* IFCAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = IFCAboutViewController.h; sourceTree = "<group>"; };
+		4A55A0BC14E1AEF400DB8005 /* IFCAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFCAboutViewController.m; sourceTree = "<group>"; };
+		4A55A0BD14E1AEF400DB8005 /* IFCAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IFCAboutViewController.xib; sourceTree = "<group>"; };
 		4A96E38714D6C641000B1B3E /* iFlightComp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFlightComp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A96E38B14D6C641000B1B3E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4A96E38D14D6C641000B1B3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +125,8 @@
 				4A96E39B14D6C642000B1B3E /* IFCAppDelegate.m */,
 				4A96E39D14D6C642000B1B3E /* IFCConversionViewController.h */,
 				4A96E39E14D6C642000B1B3E /* IFCConversionViewController.m */,
+				4A55A0BB14E1AEF400DB8005 /* IFCAboutViewController.h */,
+				4A55A0BC14E1AEF400DB8005 /* IFCAboutViewController.m */,
 				4A96E3A014D6C642000B1B3E /* first.png */,
 				4A96E3A214D6C642000B1B3E /* first@2x.png */,
 				4A96E3A414D6C642000B1B3E /* IFCWindViewController.h */,
@@ -132,6 +139,7 @@
 				4A96E3AB14D6C642000B1B3E /* IFCConversionViewController.xib */,
 				4A96E3AE14D6C642000B1B3E /* IFCWindViewController.xib */,
 				4AA6DF1714DAC66300C22476 /* IFCNavigationViewController.xib */,
+				4A55A0BD14E1AEF400DB8005 /* IFCAboutViewController.xib */,
 			);
 			path = iFlightComp;
 			sourceTree = "<group>";
@@ -211,6 +219,7 @@
 				4AA6DF1E14DB121600C22476 /* Default.png in Resources */,
 				4AA6DF2014DB132900C22476 /* iflightcomp.png in Resources */,
 				4AA6DF2214DB132D00C22476 /* iflightcomp@2x.png in Resources */,
+				4A55A0BF14E1AEF400DB8005 /* IFCAboutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +236,7 @@
 				4A96E3A614D6C642000B1B3E /* IFCWindViewController.m in Sources */,
 				4A96E3C214D6E403000B1B3E /* FlightComputer.m in Sources */,
 				4AA6DF1814DAC66300C22476 /* IFCNavigationViewController.m in Sources */,
+				4A55A0BE14E1AEF400DB8005 /* IFCAboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

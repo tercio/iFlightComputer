@@ -35,6 +35,7 @@
 
 // ++++++ navigation routines
 // time in hours and speed in km/h
++ (float) iasToTAS:(float) ias  altitude:(float) alt;
 + (float) distanceForTime:(float) t andSpeed:(float) s;
 + (float) fuelConsumedOnHours:(float )h forAutonomy:(float) litersPerHour;
 + (float) timeToTravel:(float) km atSpeed:(float) s;

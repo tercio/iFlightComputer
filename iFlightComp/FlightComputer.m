@@ -97,6 +97,17 @@
     return km/s;
 }
 
++ (float) iasToTAS:(float) ias altitude:(float) alt{
+    if (ias <= 0 || alt <= 0.0) return 0.0;
+    
+    float level = alt / 1000.0;
+    float perc = ias * 0.02;
+    
+    float tas = ias + (perc * level);
+    
+    return tas;
+}
+
 + (float) altitudeDensityForAltitude:(float) a withTrueTemperature:(float) t {
     
     if (a <= 0) return 0.0;

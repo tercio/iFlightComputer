@@ -24,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *windSpeed;
 @property (weak, nonatomic) IBOutlet UILabel *resGroundSpeed;
 @property (weak, nonatomic) IBOutlet UILabel *resHeadingCorrection;
+@property (weak, nonatomic) IBOutlet UILabel *TAS;
+@property (weak, nonatomic) IBOutlet UITextField *altitude;
 
 
 

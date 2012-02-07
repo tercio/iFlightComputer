@@ -29,6 +29,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *altitude;
 @property (weak, nonatomic) IBOutlet UITextField *oat;
 @property (weak, nonatomic) IBOutlet UILabel *densityAltitude;
+@property (weak, nonatomic) IBOutlet UITextField *ias;
+@property (weak, nonatomic) IBOutlet UITextField *iasAltitude;
+@property (weak, nonatomic) IBOutlet UILabel *tas;
 
 
 
@@ -42,5 +45,6 @@
 - (IBAction)calculateFeetMeters:(id)sender;
 - (IBAction)calculateCelsiusFahrenheit:(id)sender;
 - (IBAction)calculateLitersGallons:(id)sender;
+- (IBAction)calculateTAS:(id)sender;
 
 @end

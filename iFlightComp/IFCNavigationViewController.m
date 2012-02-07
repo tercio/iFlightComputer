@@ -23,6 +23,8 @@
 @synthesize windSpeed;
 @synthesize resGroundSpeed;
 @synthesize resHeadingCorrection;
+@synthesize TAS;
+@synthesize altitude;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -67,6 +69,8 @@
     [self setWindSpeed:nil];
     [self setResGroundSpeed:nil];
     [self setResHeadingCorrection:nil];
+    [self setTAS:nil];
+    [self setAltitude:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -123,10 +127,15 @@
     float fresWindCorrection;
     float fresGroundSpeed;
     float fHeading = [[heading text] floatValue];
+    float ftas = 0.0;
+    float faltitude = [[altitude text] floatValue];
     
     // first calulate wind data:
     
-    NSArray *ret = [FlightComputer windCorrectionForHeading:fHeading airspeed:fSpeed windDir:fwindDir windSpeed:fwindSpeeed];
+    
+    ftas = [FlightComputer iasToTAS:fSpeed altitude:faltitude];
+    
+    NSArray *ret = [FlightComputer windCorrectionForHeading:fHeading airspeed:ftas windDir:fwindDir windSpeed:fwindSpeeed];
     
     fresWindCorrection = [[ret objectAtIndex:0] floatValue];
     fresGroundSpeed = [[ret objectAtIndex:1] floatValue];
@@ -150,7 +159,7 @@
         
         
     } else {
-        fTime = fSpeed = fDist = fAutonomy = 0.0;
+        fTime = fSpeed = ftas = fDist = fAutonomy = 0.0;
         [[self view] endEditing:YES];
         return;
     }
@@ -161,12 +170,15 @@
     NSString *sT = [NSString stringWithFormat:@"%02d:%02d",[FlightComputer getHours:fTime],[FlightComputer getMinutes:fTime]];
     NSString *sGS = [NSString stringWithFormat:@"%.0f",fresGroundSpeed];
     NSString *sWC = [NSString stringWithFormat:@"%.0f",fresWindCorrection];
+    NSString *sTAS = [NSString stringWithFormat:@"%.0f",ftas];
+
     
     [resTime setText:sT];
     [resDistance setText:sD];
     [resConsuption setText:sC];
     [resGroundSpeed setText:sGS];
     [resHeadingCorrection setText:sWC];
+    [TAS setText:sTAS];
     
     [[self view] endEditing:YES];
     
