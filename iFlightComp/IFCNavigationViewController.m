@@ -32,7 +32,7 @@
     if (self) {
         // Custom initialization
         self.title = NSLocalizedString(@"Navigation", @"Navigation");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        self.tabBarItem.image = [UIImage imageNamed:@"nav-icon.png"];
     }
     return self;
 }

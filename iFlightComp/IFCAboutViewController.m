@@ -17,7 +17,7 @@
         // Custom initialization
         
         self.title = NSLocalizedString(@"About", @"About");
-        self.tabBarItem.image = [UIImage imageNamed:@"Second"];
+        self.tabBarItem.image = [UIImage imageNamed:@"about-icon.png"];
     }
     return self;
 }
