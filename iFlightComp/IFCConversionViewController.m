@@ -221,6 +221,22 @@
 
 - (IBAction)calculateTAS:(id)sender {
     
+    NSString *msg = nil;
+    NSString *title = NSLocalizedString(@"field_missing_title", @"Field Missing");
+    NSString *cancelBT = NSLocalizedString(@"cancelButtonTitle", @"Continue");
+    
+    if ([[ias text] isEqualToString:@""]) {
+        msg = NSLocalizedString(@"ias_missing", @"First");
+        
+    } else if ([[iasAltitude text] isEqualToString:@""]) {
+        msg = NSLocalizedString(@"altitude_missing", @"The altitude field must be informed");
+        
+    } 
+    if (msg) {
+        UIAlertView *uiAV = [[UIAlertView alloc] initWithTitle:title message:msg delegate:self cancelButtonTitle:cancelBT otherButtonTitles:nil , nil];
+        [uiAV show];
+        return;
+    }
     
     float ftas = [FlightComputer iasToTAS:[[ias text] floatValue] altitude:[[iasAltitude text] floatValue]];
     
@@ -323,6 +339,23 @@
 }
 
 - (IBAction)calculateDensityAltitude:(id)sender {
+    
+    NSString *msg = nil;
+    NSString *title = NSLocalizedString(@"field_missing_title", @"Field Missing");
+    NSString *cancelBT = NSLocalizedString(@"cancelButtonTitle", @"Continue");
+    
+    if ([[altitude text] isEqualToString:@""]) {
+        msg = NSLocalizedString(@"altitude_missing", @"The altitude field must be informed");
+        
+    } else if ([[oat text] isEqualToString:@""]) {
+        msg = NSLocalizedString(@"oat_missing", @"First");
+        
+    }
+    if (msg) {
+        UIAlertView *uiAV = [[UIAlertView alloc] initWithTitle:title message:msg delegate:self cancelButtonTitle:cancelBT otherButtonTitles:nil , nil];
+        [uiAV show];
+        return;
+    }
     
     NSString *sDA = [NSString stringWithFormat:@"%.0f",[FlightComputer altitudeDensityForAltitude:[[altitude text]floatValue] withTrueTemperature:[[oat text] floatValue]]];
     [densityAltitude setText:sDA];
